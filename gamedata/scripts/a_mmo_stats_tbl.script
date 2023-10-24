@@ -2,31 +2,9 @@
 ----- EDIT for ArtiGrok - ilrathCXV (01/17/23) -----
 ----------------------------------------------------
 if zz_Cost_in_tool_tip then end
+if a_wpo_parts then end
 
 local ini_ammo = ini_file("ammo\\importer.ltx")
-
---[[
-function inject_stats()
-    utils_ui.stats_table["ammo"] = {
-     ["damage"] = { 
-        index= 1, typ= "float",  name= "st_prop_k_hit",         icon_p= "ui_wp_prop_damage",             icon_n= "", track= false,  magnitude= 1,    unit= "st_perc",            compare= false, sign=false, show_always= true, value_functor= {"a_mmo_stats_tbl","prop_damage"} },
-    ["ap"] = { 
-        index= 2, typ= "string",  name= "st_prop_k_ap",         icon_p= "ui_am_propery_01",             icon_n= "", track= false,  magnitude= 1,    unit= "",             compare= false, sign= false, show_always= true, value_functor= {"a_mmo_stats_tbl","prop_ap"} },
-    ["hp"]= { 
-        index= 3, typ= "float",   name= "st_prop_k_hp",         icon_p= "ui_am_prop_restore_bleeding",             icon_n= "", track= false,  magnitude= 1,    unit= "st_perc",              compare= false, sign= true, show_always= true, value_functor= {"a_mmo_stats_tbl","prop_hp"} },
-    ["projectiles"] = { 
-        index= 4, typ= "float",   name= "st_prop_projectiles",  icon_p= "ui_wp_prop_skorostrelnost",             icon_n= "", track= false,  magnitude= 1,    unit= "",             compare= false, sign= false, show_always= true, value_functor= {"a_mmo_stats_tbl","prop_projectiles"} },
-    ["accuracy"] ={ 
-        index= 5, typ= "float",   name= "st_prop_k_disp",       icon_p= "ui_wp_prop_tochnost",           icon_n= "", track= false,  magnitude= 1,    unit= "st_perc",       compare= false, sign= true, show_always= false, value_functor= {"a_mmo_stats_tbl","prop_accuracy"} } ,
-    ["velocity"]={ 
-        index= 6, typ= "float",   name= "st_prop_k_vel",       icon_p= "ui_wp_prop_nastilnost",           icon_n= "", track= false,  magnitude= 1,    unit= "st_perc",      compare= false, sign= true, show_always= false, value_functor= {"a_mmo_stats_tbl","prop_flatness"} } ,
-    ["recoil"]={ 
-        index= 7 , typ= "float",   name= "st_prop_recoil",       icon_p= "ui_wp_prop_otdacha",           icon_n= "", track= false,  magnitude= 1,    unit= "st_perc",   compare= false, sign= false, show_always= false, value_functor= {"a_mmo_stats_tbl","prop_recoil"} } ,    
-    ["wear"]={ 
-        index= 8 , typ= "float",   name= "st_prop_impair",       icon_p= "ui_wp_prop_nadezhnost",           icon_n= "", track= false,  magnitude= 1,    unit= "st_perc",   compare= false, sign= false, show_always= true, value_functor= {"a_mmo_stats_tbl","prop_wear"} } ,
-    ["special"]={ 
-        index= 9 , typ= "float",   name= "st_prop_special",       icon_p= "ui_am_condition",           icon_n= "", track= false,  magnitude= 1,    unit= "",   compare= false, sign= false, show_always=false, value_functor= {"a_mmo_stats_tbl","prop_special"} } 
---]]
 
 function inject_stats()
     utils_ui.stats_table["ammo"] = {

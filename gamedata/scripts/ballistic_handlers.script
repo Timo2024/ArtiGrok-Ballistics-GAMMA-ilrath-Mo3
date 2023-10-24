@@ -14,8 +14,9 @@
         is_npc = Boolean that determines if we hit a human (true) or mutant (false)
     }
     Monkey patch this handler or specify a custom handler.
-]]
+
 
 function default(npc, s_hit, ctx)
     return s_hit
 end
+--]]

@@ -55,7 +55,7 @@ local defaults = {
     --["incoming"] = false,
     ["cost"] = true,
     ["impair"] = false,
-    ["mutant"] = false,
+    --["mutant"] = false,
     --["burer"] = 0,
     --["legs"] = true,
 }
@@ -72,7 +72,7 @@ function on_mcm_load()
             -- {id = "osp", type = "check", val = 1, def=false},
             {id = "cost", type = "check", val = 1, def=true},
             {id = "impair", type = "check", val = 1, def=false},
-            {id = "mutant", type = "check", val = 1, def=false},
+            --{id = "mutant", type = "check", val = 1, def=false},
             --{id = "burer", type = "list", val = 2, def=0, content= {{0,"bclassic"} , {1,"bmeaty"} , {2,"bsith"}}},
             --{id = "legs", type = "check", val = 1, def=true},
         }
