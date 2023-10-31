@@ -13,16 +13,8 @@
 		<text>PROPERTIES:</text>
 	</string>
 	<string id="st_prop_k_hit">
-		<text>Damage multiplier</text>
+		<text>Damage mod.</text>
 	</string>
-<!--	
-	<string id="st_prop_armor">
-		<text>Defeats armor level: </text>
-	</string>
-	<string id="st_prop_k_ap">
-		<text>Defeats armor level</text>
-	</string>
-!-->
 
 	<string id="st_prop_armor">
 		<text>Armor penetration: </text>
@@ -33,22 +25,22 @@
 
 	
 	<string id="st_prop_k_hp">
-		<text>Full-AP/Humanoid DMG+</text>
+		<text>Pen./Humanoid DMG</text>
 	</string>
 	<string id="st_prop_k_mp">
-		<text>Non-humanoid DMG+</text>
+		<text>Non-humanoid DMG</text>
 	</string>
 	<string id="st_prop_k_vel">
-		<text>Velocity modifier</text>
+		<text>Velocity mod.</text>
 	</string>
 	<string id="st_prop_k_disp">
-		<text>Accuracy modifier</text>
+		<text>Accuracy mod.</text>
 	</string>
 	<string id="st_prop_impair">
 		<text>Wear multiplier</text>
 	</string>
 	<string id="st_prop_projectiles">
-		<text>Projectiles</text>
+		<text>Projectile Count</text>
 	</string>
 	<string id="st_prop_special">
 		<text>Special</text>
@@ -57,6 +49,27 @@
 		<text>2nd Special</text>
 	</string>
 	
+<!--
+	Momopate's Additions
+-->
+	<string id="st_mp_a_nopen">
+		<text>Concussion penalty</text>
+	</string>
+	
+	<string id="st_mp_a_airres">
+		<text>Falloff strength</text>
+	</string>
+
+	<string id="st_mp_a_dist">
+		<text>Range mod.</text>	
+	</string>
+
+<!--
+	BR Class Descriptors
+-->
+	<string id="st_prop_armor">
+		<text>BR</text>
+	</string>
 	<string id="st_prop_armor_0">
 		<text>BR0</text>
 	</string>
@@ -81,32 +94,6 @@
 	<string id="st_prop_armor_7">
 		<text>BR7+</text>
 	</string>
-<!-- Old Arti descriptors
-	<string id="st_prop_armor_0">
-		<text>none</text>
-	</string>
-	<string id="st_prop_armor_1">
-		<text>I</text>
-	</string>
-	<string id="st_prop_armor_2">
-		<text>IIA</text>
-	</string>
-	<string id="st_prop_armor_3">
-		<text>II</text>
-	</string>
-	<string id="st_prop_armor_4">
-		<text>III</text>
-	</string>
-	<string id="st_prop_armor_5">
-		<text>IV</text>
-	</string>
-	<string id="st_prop_armor_6">
-		<text>V</text>
-	</string>
-	<string id="st_prop_armor_7">
-		<text>VI+</text>
-	</string>
-!-->
  
 	<string id="st_ballistics_flinch">
 		<text>% chance to stagger human enemies</text>

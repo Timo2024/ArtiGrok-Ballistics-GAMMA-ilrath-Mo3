@@ -846,7 +846,7 @@ end
 
 
 
-function npc_on_before_hit(npc,shit,bone_id)
+function npc_on_before_hit(npc, shit, bone_id, flags)
 
 	if shit.draftsman:id() ~= db.actor:id() then
 		return
@@ -1419,7 +1419,7 @@ function npc_on_before_hit(npc,shit,bone_id)
 		if k_ap > new_bone_armor then -- if bullet damaged armor enough and pen with reduced power
 			shit.power = shit.power * custom_bone_hitfraction
 		else
-			-- ilrathCXV (05/01/23) - Experimenting with increase to concussion damage by using k_impulse stat
+			-- ilrathCXV (10/30/23) - Experimenting with increase to concussion damage by using the CQC modifier (snake_mult)
 			shit.power = 0.0025 * shit.power * custom_bone_hitfraction * math.random(25,100) / hp_no_penetration_penalty * (1 + (flinch_stun_chance)) * snake_mult
 			pos = npc:bone_position(custom_bone_name)
 			fx = particles_object("hit_fx\\hit_metal_0" .. math.random(0,3))
