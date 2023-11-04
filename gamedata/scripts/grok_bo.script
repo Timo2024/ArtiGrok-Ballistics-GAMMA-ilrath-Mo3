@@ -691,7 +691,7 @@ function monster_on_before_hit(monster,shit,bone_id)
 	------------------
 	-- bone_mult mult. and damage mult. ranging from -40% to +60% + small chance to pull from most special affects
 	if (special_effect == "chaos") or (special_effect_2 == "chaos") then
-		chaos_effect = arti_handlers.chaos_damage(monster,bone_id)
+		chaos_effect = arti_handlers.chaos_damage(monster,bone_id,shit.weapon_id)
 		
 		random = math.random(60, 160)
 		chaos_mult = random * 0.01
@@ -736,7 +736,7 @@ function monster_on_before_hit(monster,shit,bone_id)
 		bone_mult = 1.00
 		ammo_mult = 0.85
 		shit.type = hit.burn
-		arti_handlers.dragonsbreath(monster,bone_id)
+		arti_handlers.ignite_npc(monster, bone_id, shit.weapon_id, 10, 10)
 	end
 	
 	-----------------
@@ -748,7 +748,7 @@ function monster_on_before_hit(monster,shit,bone_id)
 		bone_mult = 1.00
 		ammo_mult = 1.00
 		shit.type = hit.burn
-		arti_handlers.napalm_damage(monster)
+		arti_handlers.napalm_damage(monster, shit.weapon_id)
 	end
 	
 	----------------------
@@ -806,7 +806,9 @@ function monster_on_before_hit(monster,shit,bone_id)
 	-- Chance to burn target for slight damage
 	if (special_effect == "fire") or (special_effect_2 == "fire") then
 		local ignite_chance = ini_ammo:r_float_ex(ammo_section, "ignite") or 30
-		arti_handlers.fire_damage(monster,bone_id,ignite_chance)
+		if math.random(100) < ignite_chance then
+			arti_handlers.ignite_npc(monster, bone_id,shit.weapon_id, 3, 10)
+		end
 	end
 	
 	----------------------
@@ -1245,7 +1247,7 @@ function npc_on_before_hit(npc, shit, bone_id, flags)
 	------------------
 	-- AP/BR mult. and damage mult. ranging from -40% to +60% + small chance to pull from most special affects
 	if (special_effect == "chaos") or (special_effect_2 == "chaos") then
-		chaos_effect = arti_handlers.chaos_damage(npc,bone_id)
+		chaos_effect = arti_handlers.chaos_damage(npc,bone_id,shit.weapon_id)
 		
 		printf("Old AP: %s", k_ap)
 		local random_mult = math.random(60, 160) * 0.01
@@ -1327,7 +1329,7 @@ function npc_on_before_hit(npc, shit, bone_id, flags)
 	if (special_effect == "fire_melt") or (special_effect_2 == "fire_melt") then
 		shit.type = hit.burn
 		armor_break_bonus = armor_break_bonus + 0.025
-		arti_handlers.dragonsbreath(npc,bone_id)
+		arti_handlers.ignite_npc(npc, bone_id, shit.weapon_id, 10, 10)
 	end
 	
 	-----------------
@@ -1337,7 +1339,7 @@ function npc_on_before_hit(npc, shit, bone_id, flags)
 	if (special_effect == "napalm") or (special_effect_2 == "napalm") then
 		shit.type = hit.burn
 		armor_break_bonus = armor_break_bonus + 0.025
-		arti_handlers.napalm_damage(npc,bone_id)
+		arti_handlers.napalm_damage(npc,shit.weapon_id)
 	end
 	
 	-------------------------
@@ -1475,8 +1477,9 @@ function npc_on_before_hit(npc, shit, bone_id, flags)
 	-- Chance to burn target for slight damage
 	if (special_effect == "fire") or (special_effect_2 == "fire") then
 		local ignite_chance = ini_ammo:r_float_ex(ammo_section, "ignite") or 0.3
-		-- printf("Ignite Chance: %s", ignite_chance)
-		arti_handlers.fire_damage(npc,bone_id,ignite_chance)
+		if math.random(100) < ignite_chance then
+			arti_handlers.ignite_npc(npc,bone_id, shit.weapon_id, 3, 10)
+		end
 	end
 	
 	----------------------
